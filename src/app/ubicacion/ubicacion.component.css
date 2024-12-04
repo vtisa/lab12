@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #f1f1f1, #d1b4a2, #6b4226, #4f2c20);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Animación del fondo */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 20px;
+  max-width: 1400px; /* Aumentamos el ancho máximo del contenedor */
+  margin: 0 auto;
+  position: relative; /* Para que otros elementos puedan superponerse si es necesario */
+}
+
+h2 {
+  color: #6b4226;
+  font-size: 3em; /* Incrementamos el tamaño del título */
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+p {
+  font-size: 1.2em; /* Aumentamos el tamaño del texto */
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Contenedor principal para las ubicaciones */
+.ubicaciones-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Permite desplazamiento horizontal en dispositivos pequeños */
+  gap: 30px; /* Mayor espacio entre las tarjetas */
+  padding: 10px 0;
+  scrollbar-width: thin;
+}
+
+.ubicaciones-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ubicaciones-row::-webkit-scrollbar-thumb {
+  background: #6b4226;
+  border-radius: 4px;
+}
+
+/* Tarjetas de las ubicaciones */
+.ubicacion-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 500px; /* Aumentamos el ancho mínimo */
+  max-width: 600px; /* Aumentamos el ancho máximo */
+  flex-shrink: 0;
+}
+
+.ubicacion-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ubicacion-imagen {
+  width: 100%;
+  height: 300px; /* Incrementamos la altura de la imagen */
+  object-fit: cover;
+}
+
+.ubicacion-info {
+  padding: 20px; /* Más espacio interno */
+  text-align: left;
+}
+
+.ubicacion-info h3 {
+  font-size: 1.8em; /* Texto más grande */
+  color: #6b4226;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.ubicacion-info p {
+  margin: 10px 0;
+  font-size: 1.1em; /* Aumentamos el tamaño del texto */
+  color: #444;
+}
+
+/* Mapas */
+iframe {
+  border: none;
+  border-radius: 0 0 10px 10px;
+  width: 300%;
+  height: 350px; /* Incrementamos la altura del mapa */
+  margin-top: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .ubicacion-card {
+    min-width: 95%; /* Asegura que se ajusten en pantallas pequeñas */
+    max-width: 95%;
+  }
+}
+
+
+
+
+/* Fondo de la página para resaltar la sección */
+body {
+  background-color: #f0f0f0; /* Fondo claro */
+  padding: 20px;
+}
+
+.formulario-contacto {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Fondo con un leve degradado */
+  border: 2px solid #7f4800; /* Borde café */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+/* Título */
+.formulario-contacto h2 {
+  font-size: 26px;
+  color: #7f4800;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor de cada campo */
+.form-group {
+  margin-bottom: 25px; /* Más espacio entre campos */
+}
+
+/* Estilo de las etiquetas */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #7f4800;
+  margin-bottom: 8px; /* Más espacio debajo de la etiqueta */
+}
+
+/* Estilo de los campos de entrada y textarea */
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #7f4800;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+}
+
+/* Efecto de enfoque */
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #5f3e00; /* Color más oscuro al hacer foco */
+  outline: none;
+  box-shadow: 0 0 8px rgba(95, 62, 0, 0.3); /* Sombra de enfoque más notoria */
+}
+
+/* Botón de envío */
+button[type="submit"] {
+  background-color: #7f4800;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+button[type="submit"]:hover {
+  background-color: #5f3e00;
+  transform: translateY(-2px);
+}
+
+/* Efecto de presionar el botón */
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Texto de pie de página */
+.small {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+
+/* Animación de entrada de campos */
+.form-group input, .form-group textarea {
+  animation: entradaCampo 0.3s ease-out;
+}
+
+@keyframes entradaCampo {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

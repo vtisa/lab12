@@ -1,0 +1,53 @@
+<div class="container text-center my-5">
+  <h2>Encuentra nuestra cafetería</h2>
+  <p class="mb-4">
+    Estamos ubicados en tres lugares estratégicos para que puedas disfrutar del mejor café y un ambiente único. ¡Encuentra la ubicación más cercana a ti y visítanos!
+  </p>
+
+  <div class="row mt-4">
+    <div *ngFor="let lugar of ubicaciones" class="col-md-6 mb-4">
+      <div class="ubicacion-card">
+       
+        <div class="ubicacion-info">
+          <h3>{{ lugar.ciudad }}</h3>
+          <p><strong>Dirección:</strong> {{ lugar.direccion }}</p>
+          <p>{{ lugar.descripcion }}</p>
+        </div>
+        <!-- Mapa de Google -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.6403362651515!2d-76.98468961977948!3d-12.049163566956623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5d70786fb8d%3A0x792110870582d0af!2sAv.%20Nicol%C3%A1s%20Ayll%C3%B3n%203384%2C%20Ate%2015012!5e0!3m2!1ses-419!2spe!4v1632492913174!5m2!1ses-419!2spe"
+          width="100%"
+          height="300"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<body>
+  <div class="formulario-contacto">
+      <h2>Formulario de Consulta</h2>
+      <form action="#" method="post">
+          <div class="form-group">
+              <label for="nombre">Tu Nombre*</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+          </div>
+          <div class="form-group">
+              <label for="email">Tu Correo Electrónico*</label>
+              <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+          </div>
+          <div class="form-group">
+              <label for="consulta">Consulta</label>
+              <textarea id="consulta" name="consulta" rows="4" placeholder="Escribe tu consulta aquí"></textarea>
+          </div>
+          <button type="submit">ENVIAR</button>
+          <p class="small">Formulario de ejemplo, no se envía la información.</p>
+      </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+

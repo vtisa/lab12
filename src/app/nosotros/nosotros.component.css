@@ -1,0 +1,90 @@
+.nosotros {
+  background-color: #faf4ee; /* Color cálido */
+  color: #333; /* Contraste suave */
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.nosotros .contenido h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #6b4f4f; /* Tono cálido */
+}
+
+.nosotros .introduccion {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #5a5a5a;
+}
+
+.cita {
+  margin: 40px auto;
+  font-style: italic;
+  color: #6b4f4f;
+  font-size: 1.5rem;
+  border-left: 4px solid #e2a76f;
+  padding-left: 15px;
+  max-width: 600px;
+}
+
+.equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.miembro {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.miembro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.miembro-imagen {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  border: 4px solid #e2a76f; /* Realce */
+}
+
+.miembro h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #6b4f4f;
+}
+
+.miembro h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #a67c52; /* Complementario */
+}
+
+.miembro p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.imagen-decorativa img {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+

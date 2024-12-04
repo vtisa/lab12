@@ -1,0 +1,54 @@
+/* Contenedor principal */
+.compra-container {
+  display: flex;
+  padding: 20px;
+  height: 100vh; /* Se asegura que el contenedor principal ocupe toda la altura de la pantalla */
+  position: relative;
+}
+
+
+.categorias {
+  position: fixed; /* Hace que la sección permanezca fija */
+  top: 133px; /* Ajusta la posición para empezar debajo del menú (ajusta este valor según el alto de tu menú) */
+  left: 0; /* Alinea la columna a la izquierda */
+  height: calc(100vh - 60px); /* Ajusta la altura para que ocupe la pantalla menos la altura del menú */
+  overflow-y: auto; /* Permite el desplazamiento si hay más contenido */
+  background-color: #f4e1d2; /* Color de fondo */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 250px; /* Ajusta el ancho de la columna */
+}
+
+.productos-container {
+  margin-left: 270px; /* Ajusta el espacio para que los productos no queden tapados */
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.categoria-item {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f1e0d6; /* Color claro para cada elemento */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.categoria-item:hover {
+  background-color: #f8c6a1; /* Cambio de color al pasar el mouse */
+}
+
+.categorias h2 {
+  text-align: center;
+  color: #6f4f1f; /* Color marrón oscuro */
+}
+
+.busqueda input {
+  width: 100%; /* Asegura que el campo de búsqueda ocupe todo el ancho */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #8d440d;
+  background-color: #f8c7a162;
+}

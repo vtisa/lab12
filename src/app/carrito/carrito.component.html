@@ -1,0 +1,41 @@
+<div class="carrito-icono" (click)="toggleCarrito()">
+  <img src="assets/carrito.png" alt="Carrito" />
+  <span *ngIf="carrito.length > 0" class="cantidad-carrito">{{ carrito.length }}</span>
+</div>
+
+<div *ngIf="mostrarCarrito" class="carrito">
+  <h2>Mi Carrito</h2>
+
+  <div *ngIf="carrito.length > 0; else carritoVacio">
+    <div *ngFor="let producto of carrito" class="producto-carrito">
+      <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="producto-imagen" />
+      <div class="producto-detalles">
+        <h4>{{ producto.nombre }}</h4>
+        <p>Precio: ${{ producto.precio }}</p>
+        <p>Cantidad: {{ producto.cantidad }}</p>
+      </div>
+      <button class="btn-eliminar" (click)="eliminarDelCarrito(producto.id)">Eliminar</button>
+    </div>
+    <div class="total">
+      Total: ${{ calcularTotal() }}
+    </div>
+    <button class="btn-comprar" (click)="mostrarModalPago = true">Comprar</button>
+    <button class="vaciar-carrito" (click)="vaciarCarrito()">Vaciar Carrito</button>
+  </div>
+
+  <ng-template #carritoVacio>
+    <div class="carrito-vacio">Tu carrito está vacío.</div>
+  </ng-template>
+</div>
+
+<!-- Modal de Pago -->
+<div *ngIf="mostrarModalPago" class="modal-pago">
+  <h3>Finalizar Compra</h3>
+  <form (submit)="confirmarCompra($event)">
+    <input type="text" placeholder="Número de tarjeta" required />
+    <input type="text" placeholder="Fecha de expiración (MM/AA)" required />
+    <input type="text" placeholder="CVV" required />
+    <button type="submit">Pagar</button>
+    <button type="button" (click)="cerrarModalPago()">Cancelar</button>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="nosotros">
+  <div class="contenido">
+    <h1>Conoce a nuestro equipo</h1>
+    <p class="introduccion">
+      Cada taza de café y cada bocado cuentan una historia. En nuestra cafetería, nos apasiona crear 
+      momentos llenos de sabor, calidez y conexión. Conoce al equipo detrás de cada experiencia única.
+    </p>
+  </div>
+
+  <!-- Cita inspiradora -->
+  <div class="cita">
+    <blockquote>
+      "El secreto de una buena taza de café está en las manos y el corazón que lo preparan."
+    </blockquote>
+  </div>
+
+  <!-- Equipo -->
+  <div class="equipo">
+    <div *ngFor="let miembro of equipo" class="miembro">
+      <img [src]="miembro.imagen" [alt]="miembro.nombre" class="miembro-imagen" />
+      <h3>{{ miembro.nombre }}</h3>
+      <h4>{{ miembro.rol }}</h4>
+      <p>{{ miembro.descripcion }}</p>
+    </div>
+  </div>
+

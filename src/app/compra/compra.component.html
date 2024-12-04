@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <!-- Categorías -->
+    <div class="col-md-3 categorias">
+      <h2>Categorías</h2>
+      <div
+        *ngFor="let categoria of categorias"
+        (click)="mostrarProductosPorCategoria(categoria)"
+        [class.selected]="categoria === categoriaSeleccionada"
+        class="categoria-item"
+      >
+        <h3>{{ categoria.nombre }}</h3>
+      </div>
+    </div>
+
+    <!-- Productos -->
+    <div class="col-md-9 productos-container">
+      <!-- Campo de búsqueda -->
+      <div class="busqueda">
+        <input
+          type="text"
+          [(ngModel)]="busqueda"
+          (input)="filtrarProductos()"
+          placeholder="Buscar productos..."
+          class="form-control"
+        />
+      </div>
+
+      <!-- Lista de productos -->
+      <div class="row mt-4">
+        <div
+          *ngFor="let producto of productosFiltrados"
+          class="col-lg-4 col-md-6 mb-4"
+        >
+          <app-tarjeta
+            [titulo]="producto.nombre"
+            [descripcion]="producto.descripcion"
+            [imagen]="producto.imagen"
+            [precio]="producto.precio"
+            [mostrarControlesCarrito]="true"
+            [mostrarBotonCarrito]="true"
+            [mostrarPrecio]="true"
+            [cantidad]="getCantidadEnCarrito(producto._id)"
+            (agregarCarrito)="agregarAlCarrito(producto)"
+            (incrementarCantidad)="incrementarCantidad(producto._id)"
+            (decrementarCantidad)="decrementarCantidad(producto._id)"
+          ></app-tarjeta>
+        </div>
+      </div>
+
+      <!-- Mensaje de productos no encontrados -->
+      <div *ngIf="productosFiltrados.length === 0" class="text-center">
+        <p>No se encontraron productos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-carrito [carrito]="carrito" (carritoActualizado)="carrito = $event"></app-carrito>

@@ -8,11 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VentaService {
 
-  private apiUrl = 'https://aapiss.netlify.app/ventas';  // La URL del endpoint de ventas
+  private apiUrl = 'https://aapiss.netlify.app/ventas';
 
   constructor(private http: HttpClient) { }
 
-  // Método para realizar la venta y enviar los datos al backend
   postVentas(ventas: Venta[]): Observable<Venta[]> {
     return this.http.post<Venta[]>(this.apiUrl, ventas);  // Se agrega el cuerpo de la solicitud
   }

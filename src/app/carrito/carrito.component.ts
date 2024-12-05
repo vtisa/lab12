@@ -54,28 +54,27 @@ export class CarritoComponent {
     }
   
     // Construir los datos de las ventas
-    const ventas = this.carrito.map(producto => ({
+    const ventas: Venta[] = this.carrito.map(producto => ({
       productoId: producto._id, 
       cantidad: producto.cantidad,
     }));
   
-    console.log('Datos enviados al backend:', ventas);
-  
     // Llamar al servicio para realizar el POST
-    this.ventaService.postVentas(ventas).subscribe(
-      (response) => {
+    this.ventaService.postVentas(ventas).subscribe({
+      next: (response) => {
         console.log('Compra realizada exitosamente:', response);
         this.mostrarModalPago = false;
         this.mensajeCompra = true;
         setTimeout(() => {
           this.mensajeCompra = false;
+          this.mostrarCarrito= false;
           this.vaciarCarrito(); // Vaciar el carrito después de la compra
-        }, 1000);
+        }, 2000);
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al realizar la compra:', error);
       }
-    );
+    });
   }
   
 

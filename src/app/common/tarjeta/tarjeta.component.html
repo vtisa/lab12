@@ -8,11 +8,14 @@
   <!-- Contenido del cuerpo de la tarjeta -->
   <div class="card-body d-flex flex-column">
     <p *ngIf="descripcion" class="card-text text-center">{{ descripcion }}</p>
-    <p *ngIf="mostrarProfesion" class="card-text text-muted text-center">
-      <strong>{{ profesion }}</strong>
-    </p>
-    <p *ngIf="mostrarPrecio" class="card-text text-muted text-center">
-      <strong>s/. {{ precio }}</strong>
+    <!-- Mostrar precios con o sin descuento -->
+    <p *ngIf="mostrarPrecio" class="card-text text-center">
+      <span *ngIf="descuento" class="precio-original">
+        S/ {{ precioOriginal | number: '1.2-2' }}
+      </span>
+      <span class="precio-descuento">
+        S/ {{ precioConDescuento | number: '1.2-2' }}
+      </span>
     </p>
 
     <!-- Controles de cantidad -->

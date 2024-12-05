@@ -11,15 +11,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class TarjetaComponent {
   @Input() titulo: string = '';
   @Input() descripcion: string = '';
-  @Input() profesion: string = ''; // Campo opcional para profesiones
   @Input() imagen: string = '';
   @Input() precio: number = 0;
   @Input() mostrarTitulo: boolean = true;
-  @Input() mostrarBotonCarrito: boolean = false; // Indica si se debe mostrar el botón de carrito
-  @Input() mostrarControlesCarrito: boolean = false; // Para los controles de cantidad
-  @Input() mostrarProfesion: boolean = false;
-  @Input() mostrarPrecio: boolean = false; // Indica si se debe mostrar la profesión
+  @Input() mostrarBotonCarrito: boolean = false; 
+  @Input() mostrarControlesCarrito: boolean = false; 
+  @Input() mostrarPrecio: boolean = false;
   @Input() cantidad: number = 0;
+  @Input() descuento: boolean = false;
 
   @Output() agregarCarrito = new EventEmitter<void>();
   @Output() incrementarCantidad = new EventEmitter<void>();
@@ -35,6 +34,14 @@ export class TarjetaComponent {
 
   agregar(): void {
     this.agregarCarrito.emit();
+  }
+
+   get precioConDescuento(): number {
+    return this.descuento ? this.precio - 20 : this.precio; 
+  }
+
+  get precioOriginal(): number {
+    return this.precio;
   }
 }
 

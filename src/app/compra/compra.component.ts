@@ -7,11 +7,12 @@ import { Categoria } from '../models/categoria.model';
 import { Producto } from '../models/producto.model';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { TarjetaComponent } from "../common/tarjeta/tarjeta.component";
+import { OrdenarPorPrecioPipe } from "../pipes/ordenar-por-precio.pipe";
 
 @Component({
   selector: 'app-compra',
   standalone: true,
-  imports: [CommonModule, FormsModule, TarjetaComponent, CarritoComponent],
+  imports: [CommonModule, FormsModule, TarjetaComponent, CarritoComponent, OrdenarPorPrecioPipe],
   templateUrl: './compra.component.html',
   styleUrl: './compra.component.css'
 })
@@ -22,6 +23,7 @@ export class CompraComponent implements OnInit {
   carrito: any[] = [];
   categoriaSeleccionada: Categoria | null = null;
   busqueda: string = '';
+  ordenPrecio: string = '';
 
   constructor(
     private categoriaService: CategoriaService,
@@ -64,12 +66,15 @@ export class CompraComponent implements OnInit {
   
       // Filtrar productos por búsqueda
       const coincideBusqueda = this.busqueda
-        ? producto.nombre.toLowerCase().includes(this.busqueda.toLowerCase())
-        : true;
+      ? this.normalizarTexto(producto.nombre).includes(this.normalizarTexto(this.busqueda))
+      : true;
   
       return perteneceCategoria && coincideBusqueda;
     });
   }  
+  normalizarTexto(texto: string): string {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
 
   agregarAlCarrito(producto: Producto): void {
     const productoExistente = this.carrito.find(

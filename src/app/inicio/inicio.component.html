@@ -55,60 +55,20 @@
 </section>
 
 
-
 <section class="frappe-menu">
   <div class="row">
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/jugo.jpg" alt="Frappé Mocha">
-        <h4>Frappé Mocha</h4>
-        <p>Frappé de café con sabor a chocolate.</p>
-        <p>S/ 13.50</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé Caramel">
-        <h4>Frappé Caramel</h4>
-        <p>Frappé de café con sabor a caramelo.</p>
-        <p>S/ 14.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé de Café">
-        <h4>Frappé de Café</h4>
-        <p>Frappé de café coronado con crema.</p>
-        <p>S/ 13.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé de Cookies">
-        <h4>Frappé de Cookies</h4>
-        <p>Frappé con galleta oreo, coronado con crema.</p>
-        <p>S/ 14.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé de Algarrobina">
-        <h4>Frappé de Algarrobina</h4>
-        <p>Frappé de café.</p>
-        <p>S/ 14.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
+    <div class="col-md-3 col-sm-6" *ngFor="let producto of productos.slice(0, 4)">
+      <app-tarjeta
+        [titulo]="producto.nombre"
+        [descripcion]="producto.descripcion"
+        [imagen]="producto.imagen"
+        [precio]="producto.precio"
+        [mostrarPrecio]="true"
+        [descuento]="true"  
+      ></app-tarjeta>
     </div>
   </div>
 </section>
-
-
 
 
 <section class="informacion-principal">
@@ -133,84 +93,12 @@
       </a>
     </div>
     <div class="imagen-circular">
-      <a href="doc/cafeteria.pdff" target="_blank">
+      <a href="doc/cafeteria.pdf" target="_blank">
         <img src="assets/salado-pdf.jpg" alt="Documento 4">
       </a>
     </div>
   </div>
 </section>
-
-
-<body>
-  <section class="banner">
-    <div class="container">
-      <div class="frappe-images">
-        <img src="assets/fondo02.jpeg" alt="Frappé de chocolate">
-      </div>
-    </div>
-  </section>
-</body>
-
-
-
-
-<section class="informacion-principal">
-  <h2>Categorias en remate</h2>
-</section>
-
-
-<section class="frappe-menu">
-  <div class="row">
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/jugo.jpg" alt="Frappé Mocha">
-        <h4>Frappé Mocha</h4>
-        <p>Frappé de café con sabor a chocolate.</p>
-        <p>S/ 13.50</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé Caramel">
-        <h4>Frappé Caramel</h4>
-        <p>Frappé de café con sabor a caramelo.</p>
-        <p>S/ 14.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé de Café">
-        <h4>Frappé de Café</h4>
-        <p>Frappé de café coronado con crema.</p>
-        <p>S/ 13.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé de Cookies">
-        <h4>Frappé de Cookies</h4>
-        <p>Frappé con galleta oreo, coronado con crema.</p>
-        <p>S/ 14.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-6">
-      <div class="frappe-item">
-        <img src="assets/frapes.jpg" alt="Frappé de Algarrobina">
-        <h4>Frappé de Algarrobina</h4>
-        <p>Frappé de café .</p>
-        <p>S/ 14.00</p>
-        <a href="#" class="btn btn-brown">Ver producto →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 
 <section class="informacion-principal">
@@ -232,15 +120,11 @@
           </div>
         </div>
       </div>
-      <form class="comment-form">
-        <textarea placeholder="Escribe tu comentario..." rows="2"></textarea>
-        <button type="submit">Comentar</button>
-      </form>
     </div>
     <!-- Testimonio 2 -->
     <div class="testimonial-card">
       <div class="testimonial-content">
-        <img src="assets/usuario.png" class="testimonial-image" alt="Juan P." />
+        <img src="assets/usuario1.png" class="testimonial-image" alt="Juan P." />
         <div class="testimonial-text">
           <p>"Me encanta venir a El Banquito con mis amigos. Siempre nos sentimos como en casa." - Juan P.</p>
           <div class="testimonial-actions">
@@ -248,10 +132,6 @@
           </div>
         </div>
       </div>
-      <form class="comment-form">
-        <textarea placeholder="Escribe tu comentario..." rows="2"></textarea>
-        <button type="submit">Comentar</button>
-      </form>
     </div>
     <!-- Testimonio 3 -->
 
@@ -265,27 +145,7 @@
           </div>
         </div>
       </div>
-      <form class="comment-form">
-        <textarea placeholder="Escribe tu comentario..." rows="2"></textarea>
-        <button type="submit">Comentar</button>
-      </form>
     </div>
     
-    <!-- Testimonio 4 -->
-    <div class="testimonial-card">
-      <div class="testimonial-content">
-        <img src="assets/usuario.png" class="testimonial-image" alt="Juan P." />
-        <div class="testimonial-text">
-          <p>"Me encanta venir a El Banquito con mis amigos. Siempre nos sentimos como en casa." - Juan P.</p>
-          <div class="testimonial-actions">
-            <button class="like-btn">👍 Like</button>
-          </div>
-        </div>
-      </div>
-      <form class="comment-form">
-        <textarea placeholder="Escribe tu comentario..." rows="2"></textarea>
-        <button type="submit">Comentar</button>
-      </form>
-    </div>
   </div>
 </section>

@@ -44,8 +44,23 @@
   color: #6f4f1f; /* Color marrón oscuro */
 }
 
+.busqueda {
+  display: flex;
+  gap: 10px; 
+  align-items: center;
+}
+
 .busqueda input {
-  width: 100%; /* Asegura que el campo de búsqueda ocupe todo el ancho */
+  width: 70%; 
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #8d440d;
+  background-color: #f8c7a162;
+}
+
+.busqueda select {
+  width: 30%; 
   padding: 10px;
   font-size: 16px;
   border-radius: 4px;

@@ -11,3 +11,21 @@ button {
   border-radius: 5px; 
   font-size: 1rem;
 }
+
+.precio-original {
+  text-decoration: line-through;
+  color: hsl(0, 0%, 53%);
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.precio-descuento {
+  font-weight: bold;
+  font-size: 18px;
+  color: #060706c2;
+}
+
+.card-body {
+  text-align: center;
+}
+

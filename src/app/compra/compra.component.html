@@ -24,12 +24,17 @@
           placeholder="Buscar productos..."
           class="form-control"
         />
+        <select class="form-control" [(ngModel)]="ordenPrecio" (change)="filtrarProductos()">
+          <option value="">Ordenar por precio</option>
+          <option value="asc">Ascendente</option>
+          <option value="desc">Descendente</option>
+        </select>
       </div>
 
       <!-- Lista de productos -->
       <div class="row mt-4">
         <div
-          *ngFor="let producto of productosFiltrados"
+          *ngFor="let producto of productosFiltrados | ordenarPorPrecio: ordenPrecio"
           class="col-lg-4 col-md-6 mb-4"
         >
           <app-tarjeta

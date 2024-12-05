@@ -1,0 +1,20 @@
+[build]
+  functions = "functions"
+
+[[redirects]]
+  from = "/categorias"
+  to = "/.netlify/functions/server/categorias"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/productos"
+  to = "/.netlify/functions/server/productos"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ventas"
+  to = "/.netlify/functions/server/ventas"
+  status = 200
+  force = true
